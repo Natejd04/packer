@@ -1,5 +1,11 @@
 == Packer
 
-This is a quick app build that will allow users in your hiking group sort and assign items for the trip, so that nothing is left behind.
+This is a quick app build that will allow users in your hiking group to sort and assign items for an upcoming trip. The hopes is so that nothing will be left behind.
 
-App will have ability to add items and assign who is responsible for bringing them.
+=== Features
+* Add new hiking items
+* Assign items from list to Party Member
+* Identify Party Member by First Name (next release)
+* Organize Party Member(s) packs, by assigning items they will carry (next release)
+* Specify Item's by cubic volume (next release)
+* Auto calculate pack size based on members items (next release)
