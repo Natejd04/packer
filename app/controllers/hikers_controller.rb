@@ -9,6 +9,10 @@ class HikersController < ApplicationController
         flash[:notice] = "The Hiker was created"
         render :new
     end
+    
+    def index
+        @hikers = Hiker.all
+    end
 
  private
         def hikers_params
