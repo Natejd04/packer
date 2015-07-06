@@ -1,9 +1,11 @@
 <div id="container">
+    <div id="hikers">
     <h3><%= @hikers.name %></h3>
-        <b>Here are the items you need to bring</b>
+        <span>Here are the items you are responsible to bring</span>
             <ul>
                 <% @hikers.items.each do |hiker| %>  
                     <li><%= hiker.name %></li>
                 <% end %>
             </ul>
+        </div>
 </div>
