@@ -7,3 +7,4 @@ rclass AddColumnsToItems < ActiveRecord::Migration
     add_column :items, :pack_id, :integer
   end
 end
+end
