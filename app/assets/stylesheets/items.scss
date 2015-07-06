@@ -40,10 +40,10 @@
     margin-left: 0;
     padding:0;
     text-align: center;
-    padding-top: 0%;
+    padding-top: 5%;
     padding-bottom: 2%;
 }
-.btn {
+#simple_form_button {
     width: 30%;
     font-size: 1.5em;
     background-color: #f3f3f3;
@@ -56,6 +56,13 @@
 }
 .item_hiker {
     padding-bottom: 1.0em;
+}
+#error {
+    width: 100%;
+    display:block;
+    font-size: 1.5em;
+    display:none;
+    color: red;
 }
 @media only screen and (max-width: 1000px) {
     #mobile-tip {

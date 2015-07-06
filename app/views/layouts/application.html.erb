@@ -2,8 +2,7 @@
 <html>
 <head>
   <title>Packer</title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-<%= stylesheet_link_tag params[:controller] %>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
@@ -12,7 +11,11 @@
     <%= content_tag :div, msg, class: "alert alert-info" %>
   <% end %>
 <%= yield %>
-<div id="nav"><%= link_to "Edit List", root_path %> | Nate | Tim | Ben | Wick</div>
+<div id="nav"><%= link_to "Edit List", root_path %> &nbsp; 
+    <% @hiker_all.each do |e| %>
+    <%= link_to e.name, hiker_path(e) %>&nbsp;
+    <% end %>
+    </div>
 
 </body>
 </html>

@@ -3,14 +3,28 @@
         $(function() {  
             window.setTimeout("fadeMobile();", 5000); //call fade in 5 seconds
             window.setTimeout("fadeDesktop();", 5000); //call fade in 5 seconds    
-        
+            $("#simple_form_button").on("click", function(e) {
+                //preventDefault(e);
+                var name = $("input#item_name").val();
+                if (name != "") 
+                    {
+                        $("form#new_item").submit();
+                        $("input#item_name").val("");
+                    }
+                else
+                    {
+                        $('#error').toggle('slow');
+                        window.setTimeout("$('#error').toggle('slow');", 2000)
+                    }
+            });
+                
             $("#mobile-instruct").on("click", function() {
-                $("#mobile-tip").show();
+                $("#mobile-tip").toggle('slow');
                 $("#mobile-tip").css( "font-size", "2.0em" );
                 window.setTimeout("fadeMobile();", 5000); //call fade in 5 seconds
             });
             $("#desktop-instruct").on("click", function() {
-                $("#desktop-tip").show();   
+                $("#desktop-tip").toggle('slow');   
                 $("#desktop-tip").css( "font-size", "2.0em" );
                 window.setTimeout("fadeDesktop();", 5000); //call fade in 5 seconds
             });
@@ -32,8 +46,9 @@ function fadeDesktop() {
     <%= simple_form_for @item, remote: true do |f|   %>
         <%= f.input :name, placeholder: "Enter the gear, and select who is bringing it...", label: false %>
         <%= f.association :hiker, as: :radio_buttons, label: false %>
-        <%= f.button :submit %>
     <% end %>
+    <div id="error">You Need to Enter an Item</div>
+        <button id="simple_form_button">Create Item</button>
 </div>
 <div id="mobile-tip">
         Swipe Left on Name to Edit<br />

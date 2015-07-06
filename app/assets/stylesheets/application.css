@@ -10,6 +10,7 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
+ *= require_tree .
  *= require_self
  */
 #container {
@@ -21,4 +22,16 @@
 h3 {
     font-size: 2.0em;
     padding-bottom: 0;
+}
+#nav {
+     position: absolute;
+    top: 1%;
+    right: 5%;
+    width: 100%;
+    font-size: 1.25em;
+    text-align: right;
+}
+#nav a {
+    text-decoration: none;
+    color: darkgray;
 }
