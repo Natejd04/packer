@@ -1,0 +1,5 @@
+<%= simple_form_for @item, remote: true do |f|   %>
+    <%= f.input :name %>
+    <%= f.association :hiker %>
+    <%= f.submit %>
+<% end %>

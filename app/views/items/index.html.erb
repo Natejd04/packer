@@ -1,0 +1,9 @@
+<%= link_to 'New Item', new_item_path, remote: true %>
+    <div id="item-form" style="display:none;">
+        
+    </div>
+<div id="items">
+<% @items.each do |item| %>  
+    <%= render item %>
+<% end %>
+</div>

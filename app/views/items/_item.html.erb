@@ -1,0 +1,16 @@
+<div id="<%= dom_id item %>">
+    <%= item.id %>
+    <%= item.name %>
+        <% if item.hiker %>
+            <%= item.hiker.name %>
+        <% else %>
+            <%= simple_form_for item, remote: true do |f|   %>
+                <%= f.association :hiker, label: false %>
+            <% end %>
+                <script>$('#edit_item_<%= item.id %> #item_hiker_id').change(function(){
+                    $("#edit_item_<%= item.id %>").submit();
+                });</script>
+    
+        <% end %>
+    <br />
+</div>
