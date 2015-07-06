@@ -1,3 +1,111 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#rows {
+    width: 100%;
+    padding: 2%;
+    font-size: 2.0em;
+    border-bottom: 1px solid #f3f3f3;
+    display: block;
+}
+#rows span:first-child {
+    padding: 0;
+}
+#rows span:last-child {
+    font-size: 1.5em;
+    display: block;
+    padding: 0;
+    float: right;   
+}
+#items {
+    display: block;
+    width: 96%;
+}
+#item_name {
+    font-size: 1.75em;
+}
+#new_item input:first-child {
+  width: 80%;
+}
+#new_item input:second-child {
+  width: 90%;
+}
+
+#new_item label {
+    font-size: 1.75em;
+    display: inline-block;
+    padding-right: 5%;
+    padding-top: 2%;
+}
+#new_item {
+    width: 100%;
+    margin-left: 0;
+    padding:0;
+    text-align: center;
+    padding-top: 0%;
+    padding-bottom: 2%;
+}
+.btn {
+    width: 30%;
+    font-size: 1.5em;
+    background-color: #f3f3f3;
+    margin-top: 2%;
+}
+h3 {
+    font-size: 2.0em;
+    padding-bottom: 0;
+}
+#item_hiker_id {
+  float: right;
+  font-size: 1.2em;
+}
+.item_hiker {
+    padding-bottom: 1.0em;
+}
+@media only screen and (max-width: 1000px) {
+    #mobile-tip {
+        width: 20%;
+        text-align: center;
+        position: relative;
+        left: 82%;
+        padding-bottom: 1%; 
+        font-size: 1.5em;
+    }
+    #desktop-tip {
+        display:none;
+    }
+    #desktop-instruct {
+        display: none;
+    }
+    #mobile-instruct {
+        width: 25%;
+        position: relative;
+        top: 2%;
+        left: 2%;
+        font-size: 1.00em;
+        text-decoration: underline;
+    }
+    
+}
+@media only screen and (min-width: 1001px) {
+    #mobile-tip {
+        display:none;
+    }
+    #mobile-instruct {
+        display: none;
+    }
+    #desktop-tip {
+        width: 20%;
+        text-align: center;
+        position: relative;
+        left: 82%;
+        padding-bottom: 1%; 
+        font-size: 1.5em;
+    }
+    #desktop-instruct {
+        width: 25%;
+        position: relative;
+        top: 2%;
+        left: 2%;
+        font-size: 1.00em;
+        text-decoration: underline;
+    }
+    
+}

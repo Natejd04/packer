@@ -1,16 +1,29 @@
 <div id="<%= dom_id item %>">
-    <%= item.id %>
-    <%= item.name %>
+    <div id="rows">
+    <span><%= item.name %></span>
         <% if item.hiker %>
-            <%= item.hiker.name %>
+            <span>
+                <span id="item_name_<%= item.id %>"><%= item.hiker.name %></span>
+            </span>
+                <script>
+                $( "#item_name_<%= item.id %>" ).dblclick(function() {
+                       $("span#item_name_<%= item.id %>").replaceWith("<%= j (render 'form', item: item) %>")
+                });
+                $( "#item_name_<%= item.id %>" ).bind("touchmove", function() {
+                       $("span#item_name_<%= item.id %>").replaceWith("<%= j (render 'form', item: item) %>")
+                });
+            </script>
         <% else %>
             <%= simple_form_for item, remote: true do |f|   %>
                 <%= f.association :hiker, label: false %>
             <% end %>
-                <script>$('#edit_item_<%= item.id %> #item_hiker_id').change(function(){
+                <script>
+                    $('#edit_item_<%= item.id %> #item_hiker_id').change(function(){
                     $("#edit_item_<%= item.id %>").submit();
-                });</script>
+                });
+                
+    </script>
     
         <% end %>
-    <br />
+        <br /></div>
 </div>

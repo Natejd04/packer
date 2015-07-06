@@ -1,9 +1,51 @@
-<%= link_to 'New Item', new_item_path, remote: true %>
-    <div id="item-form" style="display:none;">
+<div id="container">
+    <script>
+        $(function() {  
+            window.setTimeout("fadeMobile();", 5000); //call fade in 5 seconds
+            window.setTimeout("fadeDesktop();", 5000); //call fade in 5 seconds    
         
+            $("#mobile-instruct").on("click", function() {
+                $("#mobile-tip").show();
+                $("#mobile-tip").css( "font-size", "2.0em" );
+                window.setTimeout("fadeMobile();", 5000); //call fade in 5 seconds
+            });
+            $("#desktop-instruct").on("click", function() {
+                $("#desktop-tip").show();   
+                $("#desktop-tip").css( "font-size", "2.0em" );
+                window.setTimeout("fadeDesktop();", 5000); //call fade in 5 seconds
+            });
+        });
+        
+function fadeMobile() {
+    $("#mobile-tip").css("color", "red");
+  window.setTimeout("$('#mobile-tip').fadeOut('slow');", 5000);
+}
+function fadeDesktop() {
+    $("#desktop-tip").css("color", "red");
+  window.setTimeout("$('#desktop-tip').fadeOut('slow');", 5000);
+}
+    </script>
+<div id="desktop-instruct">Need Help?</div>
+<div id="mobile-instruct">Need Help?</div>
+<div id="new_item">
+    <h3>Pack Organizer</h3>
+    <%= simple_form_for @item, remote: true do |f|   %>
+        <%= f.input :name, placeholder: "Enter the gear, and select who is bringing it...", label: false %>
+        <%= f.association :hiker, as: :radio_buttons, label: false %>
+        <%= f.button :submit %>
+    <% end %>
+</div>
+<div id="mobile-tip">
+        Swipe Left on Name to Edit<br />
+        <span id="center">&#8595;</span>
+    </div>
+<div id="desktop-tip">
+        Double Click Name to Edit<br />
+        <span id="center">&#8595;</span>
     </div>
 <div id="items">
 <% @items.each do |item| %>  
     <%= render item %>
 <% end %>
 </div>
+    </div>

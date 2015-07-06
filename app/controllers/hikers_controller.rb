@@ -13,7 +13,11 @@ class HikersController < ApplicationController
     def index
         @hikers = Hiker.all
     end
-
+    
+    def show
+        @hikers = Hiker.find(params[:id])
+    end
+    
  private
         def hikers_params
             params.require(:hiker).permit(:name, :backpack_size, :volume)

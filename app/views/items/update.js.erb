@@ -1,1 +1,2 @@
 $('#edit_item_<%= @item.id %>').hide();
+$("div#item_<%= @item.id %>").replaceWith("<%= j (render @item) %>");

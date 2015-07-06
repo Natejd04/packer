@@ -2,5 +2,5 @@ Rails.application.routes.draw do
  resources :hikers
  resources :items
 
- root 'items#new'
+ root 'items#index'
 end
