@@ -80,10 +80,11 @@
         display: none;
     }
     #mobile-instruct {
-        width: 100%;
+        width: 100px;
         position: absolute;
-        top: 9%;
-        left: 0%;
+        top: 7%;
+        left: 4%;
+        padding-bottom: 2%;
         font-size: 1.00em;
         text-decoration: underline;
         text-align: center;
@@ -106,10 +107,11 @@
         font-size: 1.5em;
     }
     #desktop-instruct {
-        width: 100%;
+        width: 100px;
         position: absolute;
-        top: 9%;
-        left: 0%;
+        top: 7%;
+        left: 4%;
+        padding-bottom: 2%;
         font-size: 1.00em;
         text-decoration: underline;
         text-align: center;
