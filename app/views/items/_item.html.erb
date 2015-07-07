@@ -1,6 +1,6 @@
 <div id="<%= dom_id item %>">
     <div id="rows">
-    <span><%= item.name %></span>
+    <span id="item_actual_<%= item.id %>"><%= item.name %></span>
         <% if item.hiker %>
             <span>
                 <span id="item_name_<%= item.id %>"><%= item.hiker.name %></span>
@@ -20,10 +20,20 @@
                 <script>
                     $('#edit_item_<%= item.id %> #item_hiker_id').change(function(){
                     $("#edit_item_<%= item.id %>").submit();
-                });
-                
+                });        
+                    
     </script>
     
         <% end %>
+        
+        <script>
+        $( "#item_actual_<%= item.id %>" ).dblclick(function() {
+                       $("span#item_actual_<%= item.id %>").replaceWith("<%= j (render 'form_name', item: item) %>")
+                });
+                $( "#item_actual_<%= item.id %>" ).bind("touchmove", function() {
+                       $("span#item_actual_<%= item.id %>").replaceWith("<%= j (render 'form_name', item: item) %>")
+                });
+        
+        </script>
         <br /></div>
 </div>
