@@ -1,3 +1,33 @@
 // Place all the styles related to the recommends controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#recommend_title {
+    width: 100%;
+    padding-bottom: 4%;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+#name_recommend {
+    float: right;
+    font-size: 1.75em;
+    color:darkgrey;
+}
+#qty_recommend {
+    float: left;
+    font-size: 1.75em;
+    color:darkgrey;
+}
+[id^=name_recommend] {
+    float: right;   
+}
+#recommend_name {
+    float:right;
+    font-size: 1.75em;
+}
+#recommend_name:first-child {
+    float:none;
+}
+#recommend_qty {
+    font-size: 1.75em;
+}

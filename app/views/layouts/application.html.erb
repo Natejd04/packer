@@ -2,6 +2,7 @@
 <html>
 <head>
   <title>Packer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=0.5, maximum-scale=1, user-scalable=0"/> <!--320-->
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
@@ -11,7 +12,8 @@
     <%= content_tag :div, msg, class: "alert alert-info" %>
   <% end %>
 <%= yield %>
-<div id="nav"><%= link_to "Edit List", root_path %> &nbsp; 
+<div id="nav"><%= link_to "Home", root_path %> &nbsp; | &nbsp;
+    <%= link_to "Recommended List", recommends_path %> &nbsp; | &nbsp;
     <% @hiker_all.each do |e| %>
     <%= link_to e.name, hiker_path(e) %>&nbsp;
     <% end %>

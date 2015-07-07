@@ -1,0 +1,24 @@
+<div id="<%= dom_id recommend %>">
+    <div id="rows">
+    <span id="qty_<%= dom_id recommend %>"><%= recommend.qty %></span>
+    <span id="name_<%= dom_id recommend %>"><%= recommend.name %></span>    
+        <script>
+                $( "#name_recommend_<%= recommend.id %>" ).dblclick(function() {
+                       $("span#name_recommend_<%= recommend.id %>").replaceWith("<%= j (render 'form', recommend: recommend) %>")
+                });
+                $( "#name_recommend_<%= recommend.id %>" ).bind("touchmove", function() {
+                       $("span#name_recommend_<%= recommend.id %>").replaceWith("<%= j (render 'form', recommend: recommend) %>")
+                       $("#qty_recommend_<%= recommend.id %>").hide();
+                });
+            
+             $( "#qty_recommend_<%= recommend.id %>" ).dblclick(function() {
+                       $("span#qty_recommend_<%= recommend.id %>").replaceWith("<%= j (render 'qty_form', recommend: recommend) %>")
+                });
+            
+            $( "#qty_recommend_<%= recommend.id %>" ).bind("touchmove", function() {
+                       $("span#qty_recommend_<%= recommend.id %>").replaceWith("<%= j (render 'qty_form', recommend: recommend) %>")
+                });
+            
+            </script>
+                <br /></div>
+</div>

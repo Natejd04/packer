@@ -1,0 +1,2 @@
+$('#edit_recommend_<%= @recommend.id %>').hide();
+$("div#recommend_<%= @recommend.id %>").replaceWith("<%= j (render @recommend) %>");

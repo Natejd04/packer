@@ -1,0 +1,41 @@
+<div id="container">
+    <script>
+        $(function() {   
+            $("#simple_form_button").on("click", function(e) {
+                //preventDefault(e);
+                var name = $("input#recommend_name").val();
+                if (name != "") 
+                    {
+                        $("form#new_recommend").submit();
+                        $("input#recommend_name").val("");
+                    }
+                else
+                    {
+                        $('#error').toggle('slow');
+                        window.setTimeout("$('#error').toggle('slow');", 2000)
+                    }
+            });
+        });
+    </script>
+    
+    <div id="new_item">
+    <h3>Recommended Items</h3>
+    <%= simple_form_for @recommend, remote: true do |f|   %>
+        <%= f.input :name, placeholder: "Enter the gear that we should all bring...", label: false %>
+        <%= f.input :qty, placeholder: "Enter Quantity", label: false%>
+    <% end %>
+    <div id="error">You Need to Enter an Item</div>
+        <button id="simple_form_button">Create Item</button>
+</div>
+<div id="recommends">
+    <div id="recommend_title">
+        <span id="qty_recommend">Quantity</span>
+        <span id="name_recommend">Item Name</span>
+    </div>
+<% @recommends.each do |recommend| %>  
+    <%= render recommend %>
+<% end %>
+</div>
+
+
+</div>

@@ -1,0 +1,8 @@
+<%= simple_form_for recommend, remote: true do |f| %>
+<%= f.input :name, label: false %>
+<% end %>
+<script>
+$('#edit_recommend_<%= recommend.id %> #recommend_name').blur(function(){
+                    $("#edit_recommend_<%= recommend.id %>").submit();
+                });
+</script>
