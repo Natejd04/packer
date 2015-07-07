@@ -2,7 +2,7 @@
 <%= f.input :name, label: false %>
 <% end %>
 <script>
-$('#edit_item_<%= item.id %> #item_name_id').change(function(){
+$('#edit_item_<%= item.id %> #item_name').blur(function(){
                     $("#edit_item_<%= item.id %>").submit();
                 });
 </script>
